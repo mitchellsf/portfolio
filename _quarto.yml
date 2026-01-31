@@ -1,10 +1,10 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
 
 website:
   title: "Mitchell Fowler - Portfolio"
-  site-url: "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO/"
+  site-url: "https://mitchellsf.github.io/portfolio/"
   navbar:
     background: primary
     search: true
@@ -18,12 +18,12 @@ website:
       - text: Misc.
         href: misc/index.qmd
   page-footer:
-    left: "© {{< meta year >}} Your Name"
+    left: "© {{< meta 2026 >}} Mitchell Fowler"
     right:
       - text: "Email"
-        href: "mailto:you@domain.com"
+        href: "mailto:mitchellsf@live.com"
       - text: "GitHub"
-        href: "https://github.com/YOUR-GITHUB-USERNAME"
+        href: "https://github.com/mitchellsf"
 
 format:
   html:
