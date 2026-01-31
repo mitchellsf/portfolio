@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "research/index.html#dissertation-defense-slides",
+    "href": "research/index.html#dissertation-defense-slides",
+    "title": "Research",
+    "section": "Dissertation Defense Slides",
+    "text": "Dissertation Defense Slides\nBrowse (static): \nDownload (with animations): - Download PDF - Download PowerPoint (.pptx)"
+  },
+  {
+    "objectID": "misc/game.html",
+    "href": "misc/game.html",
+    "title": "Game",
+    "section": "",
+    "text": "Once you have a web build of your game (see instructions below), copy the build folder into:\nmisc/game_build/\nThen this iframe will load it:"
+  },
+  {
+    "objectID": "misc/game.html#embedded-game",
+    "href": "misc/game.html#embedded-game",
+    "title": "Game",
+    "section": "",
+    "text": "Once you have a web build of your game (see instructions below), copy the build folder into:\nmisc/game_build/\nThen this iframe will load it:"
+  },
+  {
+    "objectID": "misc/game.html#how-to-build-the-web-version-using-pygbag",
+    "href": "misc/game.html#how-to-build-the-web-version-using-pygbag",
+    "title": "Game",
+    "section": "How to build the web version (using pygbag)",
+    "text": "How to build the web version (using pygbag)\n\nInstall pygbag:\n\npython -m pip install pygbag\n\nPut your game in a folder with a main.py at the root.\nMake your main loop async-aware (pygbag expects this). Then build:\n\npygbag path/to/your/game_folder\n\nThe output will include an index.html plus assets. Copy the output folder into misc/game_build/.\n\nTip: keep the game folder small - large assets can slow initial load."
+  },
+  {
+    "objectID": "lessons/index.html",
+    "href": "lessons/index.html",
+    "title": "Lessons",
+    "section": "",
+    "text": "Math lesson: A short demo"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome! This is a simple Quarto site scaffold you can customize."
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "Home",
+    "section": "Research",
+    "text": "Research\n\nPapers (PDFs)\nDissertation defense slides (embedded) Go to Research"
+  },
+  {
+    "objectID": "index.html#lessons",
+    "href": "index.html#lessons",
+    "title": "Home",
+    "section": "Lessons",
+    "text": "Lessons\n\nA math lesson with equations and images Go to Lessons"
+  },
+  {
+    "objectID": "index.html#misc.",
+    "href": "index.html#misc.",
+    "title": "Home",
+    "section": "Misc.",
+    "text": "Misc.\n\nWeb-playable version of your PyGame project Go to Misc."
+  },
+  {
+    "objectID": "lessons/math-lesson.html#title-math-lesson-demo",
+    "href": "lessons/math-lesson.html#title-math-lesson-demo",
+    "title": "Math lesson (demo)",
+    "section": "title: “Math lesson (demo)”",
+    "text": "title: “Math lesson (demo)”\nThis is a starter lesson page. Quarto supports LaTeX-style math directly."
+  },
+  {
+    "objectID": "lessons/math-lesson.html#example-taylor-series",
+    "href": "lessons/math-lesson.html#example-taylor-series",
+    "title": "Math lesson (demo)",
+    "section": "Example: Taylor series",
+    "text": "Example: Taylor series\nWe can write inline math like \\(e^{i\\pi} + 1 = 0\\) and displayed equations:\n\\[\ne^x = \\sum_{n=0}^{\\infty}\\frac{x^n}{n!}.\n\\]"
+  },
+  {
+    "objectID": "lessons/math-lesson.html#example-a-figure",
+    "href": "lessons/math-lesson.html#example-a-figure",
+    "title": "Math lesson (demo)",
+    "section": "Example: A figure",
+    "text": "Example: A figure\nPlace images in lessons/img/ and reference them like this:"
+  },
+  {
+    "objectID": "lessons/math-lesson.html#notes",
+    "href": "lessons/math-lesson.html#notes",
+    "title": "Math lesson (demo)",
+    "section": "Notes",
+    "text": "Notes\n\nIf you generate images from Python/Matlab, export them as PNG/SVG and drop them into lessons/img/.\nYou can also write lessons as Jupyter notebooks (.ipynb) if you want code+output."
+  },
+  {
+    "objectID": "misc/index.html",
+    "href": "misc/index.html",
+    "title": "Misc.",
+    "section": "",
+    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
+  },
+  {
+    "objectID": "misc/index.html#game-pygame-web",
+    "href": "misc/index.html#game-pygame-web",
+    "title": "Misc.",
+    "section": "",
+    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
+  }
+]

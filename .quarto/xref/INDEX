@@ -1,0 +1,20 @@
+{
+  "index.qmd": {
+    "index.html": "e0e0d4c7"
+  },
+  "lessons/index.qmd": {
+    "index.html": "6cba896a"
+  },
+  "lessons/math-lesson.qmd": {
+    "math-lesson.html": "3d0e5398"
+  },
+  "misc/game.qmd": {
+    "game.html": "9b102d4f"
+  },
+  "misc/index.qmd": {
+    "index.html": "b7027b41"
+  },
+  "research/index.qmd": {
+    "index.html": "229c26ee"
+  }
+}
