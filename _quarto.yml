@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Mitchell Fowler - Portfolio"
+  site-url: "https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO/"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Research
+        href: research/index.qmd
+      - text: Lessons
+        href: lessons/index.qmd
+      - text: Misc.
+        href: misc/index.qmd
+  page-footer:
+    left: "© {{< meta year >}} Your Name"
+    right:
+      - text: "Email"
+        href: "mailto:you@domain.com"
+      - text: "GitHub"
+        href: "https://github.com/YOUR-GITHUB-USERNAME"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    link-external-newwindow: true

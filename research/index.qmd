@@ -1,0 +1,22 @@
+---
+title: "Research"
+---
+
+## Papers
+
+### LaRTE Wall Model for LES
+<iframe src="resources/Fowler_Zaki_Meneveau_2022_a-lagrangian-relaxation-towards-equilibrium-wall-model-for-large-eddy-simulation.pdf" width="100%" height="900" style="border:1px solid #ddd;"></iframe>
+
+### MTS Wall Model for LES of Non-Equilibrium Flows
+<iframe src="resources/Fowler_Zaki_Meneveau_2023_a-multi-time-scale-wall-model-for-large-eddy-simulations-and-applications-to-non-equilibrium-channel-flows.pdf" width="100%" height="900" style="border:1px solid #ddd;"></iframe>
+
+## Dissertation Defense Slides
+
+**Browse (static):**
+<iframe src="resources/defense.pdf"
+        width="100%" height="900"
+        style="border:1px solid #ddd; border-radius: 8px;"></iframe>
+
+**Download (with animations):**
+- [Download PDF](resources/defense.pdf)
+- [Download PowerPoint (.pptx)](resources/defense.pptx)

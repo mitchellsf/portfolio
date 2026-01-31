@@ -1,0 +1,5 @@
+---
+title: "Lessons"
+---
+
+- [Math lesson: A short demo](math-lesson.qmd)

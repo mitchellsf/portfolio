@@ -1,0 +1,24 @@
+\
+---
+title: "Math lesson (demo)"
+---
+
+This is a starter lesson page. Quarto supports LaTeX-style math directly.
+
+## Example: Taylor series
+
+We can write inline math like $e^{i\pi} + 1 = 0$ and displayed equations:
+
+$$
+e^x = \sum_{n=0}^{\infty}\frac{x^n}{n!}.
+$$
+
+## Example: A figure
+
+Place images in `lessons/img/` and reference them like this:
+
+![](img/example.png){fig-alt="Example static image" width="70%"}
+
+## Notes
+- If you generate images from Python/Matlab, export them as PNG/SVG and drop them into `lessons/img/`.
+- You can also write lessons as Jupyter notebooks (`.ipynb`) if you want code+output.

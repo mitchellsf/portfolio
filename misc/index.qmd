@@ -1,0 +1,9 @@
+---
+title: "Misc."
+---
+
+## Game (PyGame → Web)
+
+The goal is to run your PyGame project **in the browser** (no install needed) by packaging it to WebAssembly.
+
+- [Play the game (embedded)](game.qmd)

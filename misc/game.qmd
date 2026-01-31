@@ -1,0 +1,33 @@
+---
+title: "Game"
+---
+
+## Embedded game
+
+Once you have a web build of your game (see instructions below), copy the build folder into:
+
+`misc/game_build/`
+
+Then this iframe will load it:
+
+<iframe
+  src="game_build/index.html"
+  width="100%"
+  height="720"
+  style="border:1px solid #ddd; border-radius: 8px;"
+  loading="lazy">
+</iframe>
+
+## How to build the web version (using pygbag)
+
+1. Install pygbag:
+   - `python -m pip install pygbag`
+
+2. Put your game in a folder with a `main.py` at the root.
+
+3. Make your main loop *async-aware* (pygbag expects this). Then build:
+   - `pygbag path/to/your/game_folder`
+
+4. The output will include an `index.html` plus assets. Copy the output folder into `misc/game_build/`.
+
+Tip: keep the game folder small - large assets can slow initial load.

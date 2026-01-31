@@ -1,0 +1,33 @@
+---
+title: "Home"
+subtitle: "Research - Lessons - Misc."
+---
+
+Welcome! This is a simple Quarto site scaffold you can customize.
+
+::: {.columns}
+::: {.column width="33%"}
+## Research
+- Papers (PDFs)
+- Dissertation defense slides (embedded)
+[Go to Research](research/index.qmd)
+:::
+
+::: {.column width="33%"}
+## Lessons
+- A math lesson with equations and images
+[Go to Lessons](lessons/index.qmd)
+:::
+
+::: {.column width="33%"}
+## Misc.
+- Web-playable version of your PyGame project
+[Go to Misc.](misc/index.qmd)
+:::
+:::
+
+### Quick to-do
+1. Replace “Your Name” and links in `_quarto.yml`
+2. Drop your PDFs into `research/papers/`
+3. Add your slides embed code (or a video export) to `research/index.qmd`
+4. Build your PyGame-to-web bundle with `pygbag` and copy it into `misc/game/`
