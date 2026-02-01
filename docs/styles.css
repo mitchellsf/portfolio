@@ -1,0 +1,25 @@
+/* Outer container: controls what you see on the Quarto page */
+.game-shell{
+  width: min(900px, 100%);
+  margin: 0 auto;
+  overflow: hidden;     /* critical: hides anything that overflows */
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* The iframe itself: no borders, no extra spacing */
+.game-iframe{
+  display: block;       /* removes the inline gap under iframes */
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  /* These are the "unscaled" dimensions of the embedded page */
+  width: 500px;
+  height: 600px;
+
+  /* Scale it down */
+  transform: scale(1.0);
+  transform-origin: 0 0;
+}

@@ -23,7 +23,7 @@
   {
     "objectID": "misc/game.html#how-to-build-the-web-version-using-pygbag",
     "href": "misc/game.html#how-to-build-the-web-version-using-pygbag",
-    "title": "Game",
+    "title": "Games",
     "section": "How to build the web version (using pygbag)",
     "text": "How to build the web version (using pygbag)\n\nInstall pygbag:\n\npython -m pip install pygbag\n\nPut your game in a folder with a main.py at the root.\nMake your main loop async-aware (pygbag expects this). Then build:\n\npygbag path/to/your/game_folder\n\nThe output will include an index.html plus assets. Copy the output folder into misc/game_build/.\n\nTip: keep the game folder small - large assets can slow initial load."
   },
@@ -103,5 +103,12 @@
     "title": "Misc.",
     "section": "",
     "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
+  },
+  {
+    "objectID": "resume/index.html#teaching-philosophy",
+    "href": "resume/index.html#teaching-philosophy",
+    "title": "Resume",
+    "section": "Teaching Philosophy",
+    "text": "Teaching Philosophy"
   }
 ]

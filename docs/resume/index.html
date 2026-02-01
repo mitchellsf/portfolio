@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Games – Mitchell Fowler - Portfolio</title>
+<title>Resume – Mitchell Fowler - Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -95,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resume/index.html"> 
+    <a class="nav-link active" href="../resume/index.html" aria-current="page"> 
 <span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item">
@@ -126,8 +125,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#block-jump-game" id="toc-block-jump-game" class="nav-link active" data-scroll-target="#block-jump-game">Block Jump Game</a></li>
-  <li><a href="#how-to-build-the-web-version-using-pygbag" id="toc-how-to-build-the-web-version-using-pygbag" class="nav-link" data-scroll-target="#how-to-build-the-web-version-using-pygbag">How to build the web version (using pygbag)</a></li>
+  <li><a href="#curriculum-vitae" id="toc-curriculum-vitae" class="nav-link active" data-scroll-target="#curriculum-vitae">Curriculum Vitae</a></li>
+  <li><a href="#teaching-philosophy" id="toc-teaching-philosophy" class="nav-link" data-scroll-target="#teaching-philosophy">Teaching Philosophy</a></li>
   </ul>
 </nav>
     </div>
@@ -136,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Games</h1>
+<h1 class="title">Resume</h1>
 </div>
 
 
@@ -153,41 +152,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="block-jump-game" class="level2">
-<h2 class="anchored" data-anchor-id="block-jump-game">Block Jump Game</h2>
-<div class="game-shell">
-<p><iframe class="game-iframe" src="blockjump_build/index.html" loading="lazy"></iframe></p>
-</div>
-<!--
-<div class="game-wrap">
-  <iframe class="game-frame"
-          src="blockjump_build/index.html"
-          loading="lazy"></iframe>
-</div>
-<iframe
-  src="blockjump_build/index.html"
-  width="50%"
-  height="100"
-  style="border:1px solid #ddd; border-radius: 8px;"
-  >
+<section id="curriculum-vitae" class="level2">
+<h2 class="anchored" data-anchor-id="curriculum-vitae">Curriculum Vitae</h2>
+<iframe src="docs/Mitchell_Fowler_CV.pdf" width="100%" height="900" style="border:1px solid #ddd;">
 </iframe>
--->
 </section>
-<section id="how-to-build-the-web-version-using-pygbag" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-build-the-web-version-using-pygbag">How to build the web version (using pygbag)</h2>
-<ol type="1">
-<li><p>Install pygbag:</p>
-<ul>
-<li><code>python -m pip install pygbag</code></li>
-</ul></li>
-<li><p>Put your game in a folder with a <code>main.py</code> at the root.</p></li>
-<li><p>Make your main loop <em>async-aware</em> (pygbag expects this). Then build:</p>
-<ul>
-<li><code>pygbag path/to/your/game_folder</code></li>
-</ul></li>
-<li><p>The output will include an <code>index.html</code> plus assets. Copy the output folder into <code>misc/game_build/</code>.</p></li>
-</ol>
-<p>Tip: keep the game folder small - large assets can slow initial load.</p>
+<section id="teaching-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-philosophy">Teaching Philosophy</h2>
+<iframe src="docs/Teaching Philosophy.pdf" width="100%" height="900" style="border:1px solid #ddd;">
+</iframe>
 
 
 </section>

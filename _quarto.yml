@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - misc/blockjump_build/**
 
 website:
   title: "Mitchell Fowler - Portfolio"
@@ -11,6 +13,8 @@ website:
     left:
       - text: Home
         href: index.qmd
+      - text: Resume
+        href: resume/index.qmd
       - text: Research
         href: research/index.qmd
       - text: Lessons
@@ -18,7 +22,7 @@ website:
       - text: Misc.
         href: misc/index.qmd
   page-footer:
-    left: "© {{< meta 2026 >}} Mitchell Fowler"
+    left: "© (2026) Mitchell Fowler"
     right:
       - text: "Email"
         href: "mailto:mitchellsf@live.com"
@@ -31,3 +35,4 @@ format:
     toc: true
     code-copy: true
     link-external-newwindow: true
+    css: styles.css

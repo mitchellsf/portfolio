@@ -1,0 +1,9 @@
+---
+title: "Resume"
+---
+
+## Curriculum Vitae
+<iframe src="docs/Mitchell_Fowler_CV.pdf" width="100%" height="900" style="border:1px solid #ddd;"></iframe>
+
+## Teaching Philosophy
+<iframe src="docs/Teaching Philosophy.pdf" width="100%" height="900" style="border:1px solid #ddd;"></iframe>
