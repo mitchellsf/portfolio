@@ -2,4 +2,4 @@
 title: "Lessons"
 ---
 
-- [Math lesson: A short demo](math-lesson.qmd)
+- [Spring-Mass-Damper System](msd/msd.qmd)

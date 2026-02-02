@@ -19,5 +19,8 @@
   },
   "resume/index.qmd": {
     "index.html": "7e07a93f"
+  },
+  "lessons/msd/msd.qmd": {
+    "msd.html": "7bb2af84"
   }
 }

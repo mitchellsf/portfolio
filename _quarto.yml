@@ -31,8 +31,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     toc: true
     code-copy: true
     link-external-newwindow: true
     css: styles.css
+    include-after-body: tooltips.html

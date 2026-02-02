@@ -1,38 +1,59 @@
 [
   {
-    "objectID": "research/index.html#dissertation-defense-slides",
-    "href": "research/index.html#dissertation-defense-slides",
-    "title": "Research",
-    "section": "Dissertation Defense Slides",
-    "text": "Dissertation Defense Slides\nBrowse (static): \nDownload (with animations): - Download PDF - Download PowerPoint (.pptx)"
+    "objectID": "resume/index.html#teaching-philosophy",
+    "href": "resume/index.html#teaching-philosophy",
+    "title": "Resume",
+    "section": "Teaching Philosophy",
+    "text": "Teaching Philosophy"
   },
   {
-    "objectID": "misc/game.html",
-    "href": "misc/game.html",
-    "title": "Game",
+    "objectID": "misc/index.html",
+    "href": "misc/index.html",
+    "title": "Misc.",
     "section": "",
-    "text": "Once you have a web build of your game (see instructions below), copy the build folder into:\nmisc/game_build/\nThen this iframe will load it:"
+    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
   },
   {
-    "objectID": "misc/game.html#embedded-game",
-    "href": "misc/game.html#embedded-game",
-    "title": "Game",
+    "objectID": "misc/index.html#game-pygame-web",
+    "href": "misc/index.html#game-pygame-web",
+    "title": "Misc.",
     "section": "",
-    "text": "Once you have a web build of your game (see instructions below), copy the build folder into:\nmisc/game_build/\nThen this iframe will load it:"
+    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
   },
   {
-    "objectID": "misc/game.html#how-to-build-the-web-version-using-pygbag",
-    "href": "misc/game.html#how-to-build-the-web-version-using-pygbag",
-    "title": "Games",
-    "section": "How to build the web version (using pygbag)",
-    "text": "How to build the web version (using pygbag)\n\nInstall pygbag:\n\npython -m pip install pygbag\n\nPut your game in a folder with a main.py at the root.\nMake your main loop async-aware (pygbag expects this). Then build:\n\npygbag path/to/your/game_folder\n\nThe output will include an index.html plus assets. Copy the output folder into misc/game_build/.\n\nTip: keep the game folder small - large assets can slow initial load."
-  },
-  {
-    "objectID": "lessons/index.html",
-    "href": "lessons/index.html",
-    "title": "Lessons",
+    "objectID": "lessons/msd/msd.html",
+    "href": "lessons/msd/msd.html",
+    "title": "Mass-Spring-Damper System",
     "section": "",
-    "text": "Math lesson: A short demo"
+    "text": "The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. There are a wide range of applications from the motion of a door swinging shut to how current travels through a circuit. The SMD system also draws on a variety of subjects such as differential equations, classical mechanics, numerical methods, and control theory.\nFigure 1 shows the basic system considered. The motion of the mass, \\(m\\), as a function of time, \\(t\\), is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. The motion of the mass is opposed by a damper. The damper broadly represents the dissipation of kinetic energy, usually via friction or fluidic resistance. In Figure 1 the damper is the friction on the wall as the mass moves through a pipe.\n\n\n\n\n\n\n\nFigure 1: MSD General Schematic\n\n\n\n\nFigure 2 shows the MSD system at three different states: at rest \\(t&lt;0\\), the initial conditions \\(t=0\\), and once motion begins \\(t&gt;0\\). When the mass is at rest (in an equilibrium state), the spring is stretched by length \\(L\\). It’s convenient to define our coordinate system, \\(y\\), based on position of the mass at its rest state. At \\(t=0\\), the mass is displaced by a distance \\(y_0\\) with velocity \\(v_0\\). This causes the mass to move for \\(t &gt; 0\\).\n\n\n\n\n\n\n\nFigure 2: MSD Moving Schematic\n\n\n\n\nSo far we have only considered an unforced system, however generally we can consider a forced system. For a forced system, there is an external force, \\(f(t)\\) acting on the mass as it is set in motion. Figure Figure 3 shows the forced MSD system.\n\n\n\n\n\n\n\nFigure 3: Forced MSD System\n\n\n\n\n\nexamples of applications\n\nbike suspension\nbuilding swaying in the wind\ntuned mass damper\ndoor closer\ncircuit"
+  },
+  {
+    "objectID": "lessons/msd/msd.html#background",
+    "href": "lessons/msd/msd.html#background",
+    "title": "Mass-Spring-Damper System",
+    "section": "",
+    "text": "The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. There are a wide range of applications from the motion of a door swinging shut to how current travels through a circuit. The SMD system also draws on a variety of subjects such as differential equations, classical mechanics, numerical methods, and control theory.\nFigure 1 shows the basic system considered. The motion of the mass, \\(m\\), as a function of time, \\(t\\), is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. The motion of the mass is opposed by a damper. The damper broadly represents the dissipation of kinetic energy, usually via friction or fluidic resistance. In Figure 1 the damper is the friction on the wall as the mass moves through a pipe.\n\n\n\n\n\n\n\nFigure 1: MSD General Schematic\n\n\n\n\nFigure 2 shows the MSD system at three different states: at rest \\(t&lt;0\\), the initial conditions \\(t=0\\), and once motion begins \\(t&gt;0\\). When the mass is at rest (in an equilibrium state), the spring is stretched by length \\(L\\). It’s convenient to define our coordinate system, \\(y\\), based on position of the mass at its rest state. At \\(t=0\\), the mass is displaced by a distance \\(y_0\\) with velocity \\(v_0\\). This causes the mass to move for \\(t &gt; 0\\).\n\n\n\n\n\n\n\nFigure 2: MSD Moving Schematic\n\n\n\n\nSo far we have only considered an unforced system, however generally we can consider a forced system. For a forced system, there is an external force, \\(f(t)\\) acting on the mass as it is set in motion. Figure Figure 3 shows the forced MSD system.\n\n\n\n\n\n\n\nFigure 3: Forced MSD System\n\n\n\n\n\nexamples of applications\n\nbike suspension\nbuilding swaying in the wind\ntuned mass damper\ndoor closer\ncircuit"
+  },
+  {
+    "objectID": "lessons/msd/msd.html#the-unforced-system",
+    "href": "lessons/msd/msd.html#the-unforced-system",
+    "title": "Mass-Spring-Damper System",
+    "section": "The Unforced System",
+    "text": "The Unforced System\n\nFree-Body Diagram\n\n\nAnalytical Solution\n\n\nDeep Dive: Analytical Solution Derivation\n\nThe analytical solution is derived by assuming \\(y(t) = e^{\\lambda t}\\).\n\n\n\nEffect of Damping"
+  },
+  {
+    "objectID": "lessons/msd/msd.html#the-forced-system",
+    "href": "lessons/msd/msd.html#the-forced-system",
+    "title": "Mass-Spring-Damper System",
+    "section": "The Forced System",
+    "text": "The Forced System\n\nResonance"
+  },
+  {
+    "objectID": "lessons/msd/msd.html#phase-plane-analysis",
+    "href": "lessons/msd/msd.html#phase-plane-analysis",
+    "title": "Mass-Spring-Damper System",
+    "section": "Phase Plane Analysis",
+    "text": "Phase Plane Analysis"
   },
   {
     "objectID": "index.html",
@@ -63,52 +84,17 @@
     "text": "Misc.\n\nWeb-playable version of your PyGame project Go to Misc."
   },
   {
-    "objectID": "lessons/math-lesson.html#title-math-lesson-demo",
-    "href": "lessons/math-lesson.html#title-math-lesson-demo",
-    "title": "Math lesson (demo)",
-    "section": "title: “Math lesson (demo)”",
-    "text": "title: “Math lesson (demo)”\nThis is a starter lesson page. Quarto supports LaTeX-style math directly."
-  },
-  {
-    "objectID": "lessons/math-lesson.html#example-taylor-series",
-    "href": "lessons/math-lesson.html#example-taylor-series",
-    "title": "Math lesson (demo)",
-    "section": "Example: Taylor series",
-    "text": "Example: Taylor series\nWe can write inline math like \\(e^{i\\pi} + 1 = 0\\) and displayed equations:\n\\[\ne^x = \\sum_{n=0}^{\\infty}\\frac{x^n}{n!}.\n\\]"
-  },
-  {
-    "objectID": "lessons/math-lesson.html#example-a-figure",
-    "href": "lessons/math-lesson.html#example-a-figure",
-    "title": "Math lesson (demo)",
-    "section": "Example: A figure",
-    "text": "Example: A figure\nPlace images in lessons/img/ and reference them like this:"
-  },
-  {
-    "objectID": "lessons/math-lesson.html#notes",
-    "href": "lessons/math-lesson.html#notes",
-    "title": "Math lesson (demo)",
-    "section": "Notes",
-    "text": "Notes\n\nIf you generate images from Python/Matlab, export them as PNG/SVG and drop them into lessons/img/.\nYou can also write lessons as Jupyter notebooks (.ipynb) if you want code+output."
-  },
-  {
-    "objectID": "misc/index.html",
-    "href": "misc/index.html",
-    "title": "Misc.",
+    "objectID": "lessons/index.html",
+    "href": "lessons/index.html",
+    "title": "Lessons",
     "section": "",
-    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
+    "text": "Spring-Mass-Damper System"
   },
   {
-    "objectID": "misc/index.html#game-pygame-web",
-    "href": "misc/index.html#game-pygame-web",
-    "title": "Misc.",
-    "section": "",
-    "text": "The goal is to run your PyGame project in the browser (no install needed) by packaging it to WebAssembly.\n\nPlay the game (embedded)"
-  },
-  {
-    "objectID": "resume/index.html#teaching-philosophy",
-    "href": "resume/index.html#teaching-philosophy",
-    "title": "Resume",
-    "section": "Teaching Philosophy",
-    "text": "Teaching Philosophy"
+    "objectID": "research/index.html#dissertation-defense-slides",
+    "href": "research/index.html#dissertation-defense-slides",
+    "title": "Research",
+    "section": "Dissertation Defense Slides",
+    "text": "Dissertation Defense Slides\nBrowse (static): \nDownload (with animations): - Download PDF - Download PowerPoint (.pptx)"
   }
 ]

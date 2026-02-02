@@ -1,0 +1,55 @@
+
+---
+title: "Mass-Spring-Damper System"
+---
+
+## Background
+
+The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. There are a wide range of applications from the motion of a door swinging shut to how current travels through a circuit. The SMD system also draws on a variety of subjects such as differential equations, classical mechanics, numerical methods,  and control theory.
+
+@fig-msd-general-schematic shows the basic system considered. The motion of the mass, $m$, as a function of time, $t$, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. The motion of the mass is opposed by a damper. The damper broadly represents the dissipation of kinetic energy, usually via friction or fluidic resistance. In @fig-msd-general-schematic the damper is the friction on the wall as the mass moves through a pipe. 
+
+::: {.text-center}
+![MSD General Schematic](msd-general-schematic.png){#fig-msd-general-schematic width=200}
+:::
+
+@fig-msd-moving-schematic shows the MSD system at three different states: at rest $t<0$, the initial conditions $t=0$, and once motion begins $t>0$. When the mass is at rest (in an equilibrium state), the spring is stretched by length $L$. It's convenient to define our coordinate system, $y$, based on position of the mass at its rest state. At  $t=0$, the mass is displaced by a distance $y_0$ with velocity $v_0$. This causes the mass to move for $t > 0$.
+
+::: {.text-center}
+![MSD Moving Schematic](msd-moving-schematic.png){#fig-msd-moving-schematic width=400}
+:::
+
+So far we have only considered an {{< ttip text="unforced system" title="Mass motion is purely due to initial displacement and velocity." >}}, however generally we can consider a {{< ttip text="forced system" title="Mass motion is due to initial conditons plus external forces." >}}. For a forced system, there is an external force, $f(t)$ acting on the mass as it is set in motion. Figure @fig-msd-forced-schematic shows the forced MSD system. 
+
+::: {.text-center}
+![Forced MSD System](msd-forced-schematic.png){#fig-msd-forced-schematic width=200}
+:::
+
+- examples of applications
+  - bike suspension
+  - building swaying in the wind
+  - tuned mass damper
+  - door closer
+  - circuit
+
+## The Unforced System
+
+### Free-Body Diagram
+
+### Analytical Solution
+
+<details class="deep-dive">
+  <summary>Deep Dive: Analytical Solution Derivation</summary>
+
+    The analytical solution is derived by assuming $y(t) = e^{\lambda t}$.
+
+</details>
+
+
+### Effect of Damping
+
+## The Forced System
+
+### Resonance
+
+## Phase Plane Analysis
