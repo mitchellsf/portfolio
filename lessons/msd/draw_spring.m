@@ -1,5 +1,5 @@
 figure; clf;
-drawVerticalSpringCentered(0, 1, 0, 'Turns', 8, 'Amplitude', 0.15, ...
+drawVerticalSpringCentered(0, 1, 0, 'Turns', 4, 'Amplitude', 0.15, ...
     'LeadTop', 0.15, 'LeadBottom', 0.15, 'LineWidth', 2);
 xlim([-0.4 0.4]); ylim([-0.1 1.1]);
 

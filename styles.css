@@ -16,44 +16,6 @@
   outline: none;
 }
 
-
-/* .msd-tooltip {
-  --bs-tooltip-bg: #222;
-  --bs-tooltip-color: #fff;
-  --bs-tooltip-opacity: 1;
-} */
-/* [data-bs-toggle="tooltip"] {
-  cursor: help;
-  text-decoration: underline dotted;
-  text-underline-offset: 0.15em;
-}
-[data-bs-toggle="tooltip"]:hover {
-  background: rgba(255, 230, 150, 0.6);
-  border-radius: 0.25em;
-  padding: 0 0.15em;
-} */
-/* Make tooltip terms behave like Quarto crossrefs (fig/eq refs) */
-/* .tip.quarto-xref {
-  color: var(--bs-link-color);
-  text-decoration: underline;
-  text-decoration-thickness: from-font;
-  text-underline-offset: 0.15em;
-  cursor: pointer;
-}
-.tip.quarto-xref:hover,
-.tip.quarto-xref:focus {
-  color: var(--bs-link-hover-color);
-  text-decoration: underline;
-}
-/* If your theme gives crossrefs a subtle hover "chip", match that */
-/* .tip.quarto-xref:hover {
-  background: rgba(0,0,0,0.05);
-  border-radius: 0.25em;
-  padding: 0 0.15em;
-} */
-
-
-
 /* **************************************************** */
 /* allow figures captions to be centered */
 .text-center figure { 

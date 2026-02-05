@@ -5,43 +5,88 @@ title: "Mass-Spring-Damper System"
 
 ## Background
 
-The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. There are a wide range of applications from the motion of a door swinging shut to how current travels through a circuit. The SMD system also draws on a variety of subjects such as differential equations, classical mechanics, numerical methods,  and control theory.
-
-@fig-msd-general-schematic shows the basic system considered. The motion of the mass, $m$, as a function of time, $t$, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. The motion of the mass is opposed by a damper. The damper broadly represents the dissipation of kinetic energy, usually via friction or fluidic resistance. In @fig-msd-general-schematic the damper is the friction on the wall as the mass moves through a pipe. 
+The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. @fig-msd-general-schematic shows the basic system considered. The motion of the mass, $m$, as a function of time, $t$, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a {{< ttip text="damper" title="A device which dissipates kinetic energy, usually via friction or fluid resistance." >}}.  In @fig-msd-general-schematic the damper is the friction on the wall as the mass moves through a pipe. 
 
 ::: {.text-center}
-![MSD General Schematic](msd-general-schematic.png){#fig-msd-general-schematic width=200}
+![MSD General Schematic](msd-general-schematic.png){#fig-msd-general-schematic width=80%}
 :::
 
-@fig-msd-moving-schematic shows the MSD system at three different states: at rest $t<0$, the initial conditions $t=0$, and once motion begins $t>0$. When the mass is at rest (in an equilibrium state), the spring is stretched by length $L$. It's convenient to define our coordinate system, $y$, based on position of the mass at its rest state. At  $t=0$, the mass is displaced by a distance $y_0$ with velocity $v_0$. This causes the mass to move for $t > 0$.
+@fig-msd-moving-schematic shows the MSD system at three different states: when the mass is at rest $t<0$, the motion's initial conditions $t=0$, and once motion begins $t>0$.<br>
+When the mass is at rest (in an equilibrium state), the spring is stretched by length $L$. It's convenient to define our coordinate system, $y$, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br>
+At  $t=0$, the mass is displaced by a distance $y_0$ with velocity $v_0$. This causes the mass to move for $t > 0$. Once in motion, we can have either an {{< ttip text="unforced system" title="Mass motion is purely due to initial displacement and velocity." >}} or a {{< ttip text="forced system" title="Mass motion is due to initial conditons plus external forces." >}} with the external force $f(t)$.
 
 ::: {.text-center}
-![MSD Moving Schematic](msd-moving-schematic.png){#fig-msd-moving-schematic width=400}
+![MSD Moving Schematic](msd-moving-schematic.png){#fig-msd-moving-schematic width=80%}
 :::
 
-So far we have only considered an {{< ttip text="unforced system" title="Mass motion is purely due to initial displacement and velocity." >}}, however generally we can consider a {{< ttip text="forced system" title="Mass motion is due to initial conditons plus external forces." >}}. For a forced system, there is an external force, $f(t)$ acting on the mass as it is set in motion. Figure @fig-msd-forced-schematic shows the forced MSD system. 
+To gain an understanding of the real-world applications, we'll now consider four examples of MSD systems (shown in @fig-msd-examples along with a table summary @tbl-msd-examples):
+
+- **Door closer** \- Opening the door loads a spring in the door closer mechanism, storing energy; when released, the spring drives the door shut while a hydraulic piston forces oil through a small orifice, providing damping that prevents the door from slamming.
+
+- **Bike front suspension** \- A bump compresses the fork, increasing pressure in the air chamber (spring) that stores energy and pushes the fork back out, while a hydraulic damper controls oil flow to limit how quickly the fork compresses and rebounds so the bike doesn’t bounce.
+
+- **Building** \- A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building's natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a {{< ttip text="tuned mass damper (TMD)" title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's." >}}.
+
+- **RLC circuit** \- An RLC circuit is the electrical analog of a mass-spring-damper, where inductance acts like mass (inertia), capacitance like a spring (stored energy), and resistance like damping (energy dissipation).
 
 ::: {.text-center}
-![Forced MSD System](msd-forced-schematic.png){#fig-msd-forced-schematic width=200}
+![MSD Real-World Examples](msd-examples.png){#fig-msd-examples width=100%}
 :::
 
-- examples of applications
-  - bike suspension
-  - building swaying in the wind
-  - tuned mass damper
-  - door closer
-  - circuit
+| Example        | Motion                   | Mass       | Spring                | Damper                    | Force         |
+|----------------|--------------------------|------------|-----------------------|---------------------------|---------------|
+| Door Closer    | piston moving            | door       | internal spring       | hydraulic damping         | pushing door  |
+| Bike Suspension| vertical motion of bike  | bike frame | coil spring / air spring | hydraulic damper (oil) | bumpy ground  |
+| Building       | sway                     | building   | stiffness             | structural damping        | wind          |
+| RLC Circuit    | current                  | inductance | elastance (1/C)       | resistor                  | applied voltage |
+: MSD real-world examples and their physical analogies {#tbl-msd-examples}
+
+<iframe src="q-msd-examples.html"
+        style="width:100%; height:520px; border:0;"
+        loading="lazy"></iframe>
+
+## Governing Equation
+
+To derive the governing equation for the mass's motion we first need to write the force balance via a free body diagram. @fig-msd-fbd shows the forces acting on the mass. For positive dispacement, $y>0$, the spring is stretched and gives a force in the negative $y$ direction. For negative displacement, the spring is compressed and gives a force in the positive $y$ direction. In both cases the spring force **opposes** the **displacement**, which may be written as $F_s = -ky$ where $k$ is the spring constant. Similarly, the damper **opposes** the **velocity** of the mass. This is just like surface friction opposing the motion of a block sliding or drag slowing a ball thrown through the air. This gives the force, $F_d = -c \dot{y}$, where a dot overhead represents taking a derivative with time. The linear relationship between force and velocity is an approximation, but accurate for most applications. Finally the external force, $f(t)$, is defined to be positive in the positive $y$ direction.
+
+::: {.text-center}
+![MSD Free Body Diagram](msd-fbd.png){#fig-msd-fbd width=100%}
+:::
+
+Next we apply Newton's second law of motion
+$$
+\begin{align}
+\sum F_y &= m a = m \ddot{y} \nonumber \\
+&= f - k y - c \dot{y}
+\end{align}
+$$
+
+Rewriting gives the final governing equation
+$$
+m \ddot{y} + c \dot{y} + k y = f
+$$ {#eq-gov-eq}
+This equation is a second order, linear, inhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let's define each of these terms.
+
+The **order** of an ODE is the highest order derivative derivative in the equation. In this case $\ddot{y}$ is the highest order derivative so we say the ODE is second order.
+
+An ODE is **linear** if the coefficients of each $y$ term and its derivatives are only functions of the independent variable. e.g. $a(t)\dot{y}$ is linear but $y\dot{y}$ is non-linear.
+
+A **homogeneous** ODE is linear but with no external forcing term. The external force, $f(t)$, in @eq-gov-eq makes the equation inhomogeneous. This distinction has important implications in solution strategies.
+
+An **ordinary** differential equation only has derivatives with respect to one independent variable; as opposed to a **partial** differential equation which has derivatives with respect to two or more independent variables.
 
 ## The Unforced System
 
-### Free-Body Diagram
+
+
+
 
 ### Analytical Solution
 
 <details class="deep-dive">
   <summary>Deep Dive: Analytical Solution Derivation</summary>
 
-    The analytical solution is derived by assuming $y(t) = e^{\lambda t}$.
+     The analytical solution is derived by assuming $y(t) = A e^{\lambda t}$.
 
 </details>
 

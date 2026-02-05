@@ -69,8 +69,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -156,9 +170,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#governing-equation" id="toc-governing-equation" class="nav-link" data-scroll-target="#governing-equation">Governing Equation</a></li>
   <li><a href="#the-unforced-system" id="toc-the-unforced-system" class="nav-link" data-scroll-target="#the-unforced-system">The Unforced System</a>
   <ul class="collapse">
-  <li><a href="#free-body-diagram" id="toc-free-body-diagram" class="nav-link" data-scroll-target="#free-body-diagram">Free-Body Diagram</a></li>
   <li><a href="#analytical-solution" id="toc-analytical-solution" class="nav-link" data-scroll-target="#analytical-solution">Analytical Solution</a></li>
   <li><a href="#effect-of-damping" id="toc-effect-of-damping" class="nav-link" data-scroll-target="#effect-of-damping">Effect of Damping</a></li>
   </ul></li>
@@ -194,13 +208,12 @@ window.Quarto = {
 
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. There are a wide range of applications from the motion of a door swinging shut to how current travels through a circuit. The SMD system also draws on a variety of subjects such as differential equations, classical mechanics, numerical methods, and control theory.</p>
-<p><a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The motion of the mass, <span class="math inline">\(m\)</span>, as a function of time, <span class="math inline">\(t\)</span>, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. The motion of the mass is opposed by a damper. The damper broadly represents the dissipation of kinetic energy, usually via friction or fluidic resistance. In <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> the damper is the friction on the wall as the mass moves through a pipe.</p>
+<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The motion of the mass, <span class="math inline">m</span>, as a function of time, <span class="math inline">t</span>, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="A device which dissipates kinetic energy, usually via friction or fluid resistance.">damper</span>. In <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> the damper is the friction on the wall as the mass moves through a pipe.</p>
 <div class="text-center">
 <div id="fig-msd-general-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-msd-general-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="msd-general-schematic.png" class="img-fluid figure-img" width="200">
+<img src="msd-general-schematic.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-msd-general-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: MSD General Schematic
@@ -208,12 +221,12 @@ Figure&nbsp;1: MSD General Schematic
 </figure>
 </div>
 </div>
-<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: at rest <span class="math inline">\(t&lt;0\)</span>, the initial conditions <span class="math inline">\(t=0\)</span>, and once motion begins <span class="math inline">\(t&gt;0\)</span>. When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">\(L\)</span>. It’s convenient to define our coordinate system, <span class="math inline">\(y\)</span>, based on position of the mass at its rest state. At <span class="math inline">\(t=0\)</span>, the mass is displaced by a distance <span class="math inline">\(y_0\)</span> with velocity <span class="math inline">\(v_0\)</span>. This causes the mass to move for <span class="math inline">\(t &gt; 0\)</span>.</p>
+<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: when the mass is at rest <span class="math inline">t&lt;0</span>, the motion’s initial conditions <span class="math inline">t=0</span>, and once motion begins <span class="math inline">t&gt;0</span>.<br> When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">L</span>. It’s convenient to define our coordinate system, <span class="math inline">y</span>, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br> At <span class="math inline">t=0</span>, the mass is displaced by a distance <span class="math inline">y_0</span> with velocity <span class="math inline">v_0</span>. This causes the mass to move for <span class="math inline">t &gt; 0</span>. Once in motion, we can have either an <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="Mass motion is purely due to initial displacement and velocity.">unforced system</span> or a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="Mass motion is due to initial conditons plus external forces.">forced system</span> with the external force <span class="math inline">f(t)</span>.</p>
 <div class="text-center">
 <div id="fig-msd-moving-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-msd-moving-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="msd-moving-schematic.png" class="img-fluid figure-img" width="400">
+<img src="msd-moving-schematic.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-msd-moving-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: MSD Moving Schematic
@@ -221,42 +234,129 @@ Figure&nbsp;2: MSD Moving Schematic
 </figure>
 </div>
 </div>
-<p>So far we have only considered an <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is purely due to initial displacement and velocity." data-bs-toggle="tooltip" tabindex="0">unforced system</span>, however generally we can consider a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is due to initial conditons plus external forces." data-bs-toggle="tooltip" tabindex="0">forced system</span>. For a forced system, there is an external force, <span class="math inline">\(f(t)\)</span> acting on the mass as it is set in motion. Figure <a href="#fig-msd-forced-schematic" class="quarto-xref">Figure&nbsp;3</a> shows the forced MSD system.</p>
+<p>To gain an understanding of the real-world applications, we’ll now consider four examples of MSD systems (shown in <a href="#fig-msd-examples" class="quarto-xref">Figure&nbsp;3</a> along with a table summary <a href="#tbl-msd-examples" class="quarto-xref">Table&nbsp;1</a>):</p>
+<ul>
+<li><p><strong>Door closer</strong> - Opening the door loads a spring in the door closer mechanism, storing energy; when released, the spring drives the door shut while a hydraulic piston forces oil through a small orifice, providing damping that prevents the door from slamming.</p></li>
+<li><p><strong>Bike front suspension</strong> - A bump compresses the fork, increasing pressure in the air chamber (spring) that stores energy and pushes the fork back out, while a hydraulic damper controls oil flow to limit how quickly the fork compresses and rebounds so the bike doesn’t bounce.</p></li>
+<li><p><strong>Building</strong> - A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building’s natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's.">tuned mass damper (TMD)</span>.</p></li>
+<li><p><strong>RLC circuit</strong> - An RLC circuit is the electrical analog of a mass-spring-damper, where inductance acts like mass (inertia), capacitance like a spring (stored energy), and resistance like damping (energy dissipation).</p></li>
+</ul>
 <div class="text-center">
-<div id="fig-msd-forced-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-msd-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-msd-forced-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="msd-forced-schematic.png" class="img-fluid figure-img" width="200">
+<div aria-describedby="fig-msd-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="msd-examples.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-msd-forced-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Forced MSD System
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-msd-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: MSD Real-World Examples
 </figcaption>
 </figure>
 </div>
 </div>
-<ul>
-<li>examples of applications
-<ul>
-<li>bike suspension</li>
-<li>building swaying in the wind</li>
-<li>tuned mass damper</li>
-<li>door closer</li>
-<li>circuit</li>
-</ul></li>
-</ul>
+<div id="tbl-msd-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-msd-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: MSD real-world examples and their physical analogies
+</figcaption>
+<div aria-describedby="tbl-msd-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 10%">
+<col style="width: 19%">
+<col style="width: 22%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th>Motion</th>
+<th>Mass</th>
+<th>Spring</th>
+<th>Damper</th>
+<th>Force</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Door Closer</td>
+<td>piston moving</td>
+<td>door</td>
+<td>internal spring</td>
+<td>hydraulic damping</td>
+<td>pushing door</td>
+</tr>
+<tr class="even">
+<td>Bike Suspension</td>
+<td>vertical motion of bike</td>
+<td>bike frame</td>
+<td>coil spring / air spring</td>
+<td>hydraulic damper (oil)</td>
+<td>bumpy ground</td>
+</tr>
+<tr class="odd">
+<td>Building</td>
+<td>sway</td>
+<td>building</td>
+<td>stiffness</td>
+<td>structural damping</td>
+<td>wind</td>
+</tr>
+<tr class="even">
+<td>RLC Circuit</td>
+<td>current</td>
+<td>inductance</td>
+<td>elastance (1/C)</td>
+<td>resistor</td>
+<td>applied voltage</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<iframe src="q-msd-examples.html" style="width:100%; height:520px; border:0;" loading="lazy">
+</iframe>
+</section>
+<section id="governing-equation" class="level2">
+<h2 class="anchored" data-anchor-id="governing-equation">Governing Equation</h2>
+<p>To derive the governing equation for the mass’s motion we first need to write the force balance via a free body diagram. <a href="#fig-msd-fbd" class="quarto-xref">Figure&nbsp;4</a> shows the forces acting on the mass. For positive dispacement, <span class="math inline">y&gt;0</span>, the spring is stretched and gives a force in the negative <span class="math inline">y</span> direction. For negative displacement, the spring is compressed and gives a force in the positive <span class="math inline">y</span> direction. In both cases the spring force <strong>opposes</strong> the <strong>displacement</strong>, which may be written as <span class="math inline">F_s = -ky</span> where <span class="math inline">k</span> is the spring constant. Similarly, the damper <strong>opposes</strong> the <strong>velocity</strong> of the mass. This is just like surface friction opposing the motion of a block sliding or drag slowing a ball thrown through the air. This gives the force, <span class="math inline">F_d = -c \dot{y}</span>, where a dot overhead represents taking a derivative with time. The linear relationship between force and velocity is an approximation, but accurate for most applications. Finally the external force, <span class="math inline">f(t)</span>, is defined to be positive in the positive <span class="math inline">y</span> direction.</p>
+<div class="text-center">
+<div id="fig-msd-fbd" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-msd-fbd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="msd-fbd.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-msd-fbd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: MSD Free Body Diagram
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Next we apply Newton’s second law of motion <span class="math display">
+\begin{align}
+\sum F_y &amp;= m a = m \ddot{y} \nonumber \\
+&amp;= f - k y - c \dot{y}
+\end{align}
+</span></p>
+<p>Rewriting gives the final governing equation <span id="eq-gov-eq"><span class="math display">
+m \ddot{y} + c \dot{y} + k y = f
+\tag{1}</span></span> This equation is a second order, linear, inhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let’s define each of these terms.</p>
+<p>The <strong>order</strong> of an ODE is the highest order derivative derivative in the equation. In this case <span class="math inline">\ddot{y}</span> is the highest order derivative so we say the ODE is second order.</p>
+<p>An ODE is <strong>linear</strong> if the coefficients of each <span class="math inline">y</span> term and its derivatives are only functions of the independent variable. e.g.&nbsp;<span class="math inline">a(t)\dot{y}</span> is linear but <span class="math inline">y\dot{y}</span> is non-linear.</p>
+<p>A <strong>homogeneous</strong> ODE is linear but with no external forcing term. The external force, <span class="math inline">f(t)</span>, in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> makes the equation inhomogeneous. This distinction has important implications in solution strategies.</p>
+<p>An <strong>ordinary</strong> differential equation only has derivatives with respect to one independent variable; as opposed to a <strong>partial</strong> differential equation which has derivatives with respect to two or more independent variables.</p>
 </section>
 <section id="the-unforced-system" class="level2">
 <h2 class="anchored" data-anchor-id="the-unforced-system">The Unforced System</h2>
-<section id="free-body-diagram" class="level3">
-<h3 class="anchored" data-anchor-id="free-body-diagram">Free-Body Diagram</h3>
-</section>
 <section id="analytical-solution" class="level3">
 <h3 class="anchored" data-anchor-id="analytical-solution">Analytical Solution</h3>
 <details class="deep-dive">
 <summary>
 Deep Dive: Analytical Solution Derivation
 </summary>
-<p>The analytical solution is derived by assuming <span class="math inline">\(y(t) = e^{\lambda t}\)</span>.</p>
+<p>The analytical solution is derived by assuming <span class="math inline">y(t) = A e^{\lambda t}</span>.</p>
 </details>
 </section>
 <section id="effect-of-damping" class="level3">
