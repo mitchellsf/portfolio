@@ -5,7 +5,7 @@ title: "Mass-Spring-Damper System"
 
 ## Background
 
-The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. @fig-msd-general-schematic shows the basic system considered. The motion of the mass, $m$, as a function of time, $t$, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a {{< ttip text="damper" title="A device which dissipates kinetic energy, usually via friction or fluid resistance." >}}.  In @fig-msd-general-schematic the damper is the friction on the wall as the mass moves through a pipe. 
+The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. @fig-msd-general-schematic shows the basic system considered. The objective is find the motion of the mass as a function of time. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a {{< ttip text="damper" title="A device which dissipates kinetic energy, usually via friction or fluid resistance." >}}, which is represented by wall friction in @fig-msd-general-schematic.
 
 ::: {.text-center}
 ![MSD General Schematic](msd-general-schematic.png){#fig-msd-general-schematic width=80%}
@@ -42,7 +42,8 @@ To gain an understanding of the real-world applications, we'll now consider four
 : MSD real-world examples and their physical analogies {#tbl-msd-examples}
 
 <iframe src="q-msd-examples.html"
-        style="width:100%; height:520px; border:0;"
+        class="quiz-iframe"
+        style="width:100%; border:0;"
         loading="lazy"></iframe>
 
 ## Governing Equation
@@ -55,31 +56,39 @@ To derive the governing equation for the mass's motion we first need to write th
 
 Next we apply Newton's second law of motion
 $$
-\begin{align}
-\sum F_y &= m a = m \ddot{y} \nonumber \\
+\begin{aligned}
+\sum F_y &= m a = m \ddot{y} \\
 &= f - k y - c \dot{y}
-\end{align}
+\end{aligned}
 $$
 
 Rewriting gives the final governing equation
 $$
 m \ddot{y} + c \dot{y} + k y = f
 $$ {#eq-gov-eq}
-This equation is a second order, linear, inhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let's define each of these terms.
+This equation is a second order, linear, nonhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let's define each of these terms.
 
 The **order** of an ODE is the highest order derivative derivative in the equation. In this case $\ddot{y}$ is the highest order derivative so we say the ODE is second order.
 
 An ODE is **linear** if the coefficients of each $y$ term and its derivatives are only functions of the independent variable. e.g. $a(t)\dot{y}$ is linear but $y\dot{y}$ is non-linear.
 
-A **homogeneous** ODE is linear but with no external forcing term. The external force, $f(t)$, in @eq-gov-eq makes the equation inhomogeneous. This distinction has important implications in solution strategies.
+A **homogeneous** ODE is linear but with no external forcing term. The external force, $f(t)$, in @eq-gov-eq makes the equation nonhomogeneous. This distinction has important implications in solution strategies.
 
 An **ordinary** differential equation only has derivatives with respect to one independent variable; as opposed to a **partial** differential equation which has derivatives with respect to two or more independent variables.
 
+Each of these classifications has a significant influence on solution properties and strategies. Next we'll discuss the unforced system, $f(t) = 0$.
+
+<iframe src="q-diff-eq-classification.html"
+        class="quiz-iframe"
+        style="width:100%; border:0;"
+        loading="lazy"></iframe>
+
 ## The Unforced System
 
-
-
-
+In the unforced system we set $f = 0$ in @eq-gov-eq and get
+$$
+m \ddot{y} + c \dot{y} + k y = 0
+$$ {#eq-gov-eq-unforced}
 
 ### Analytical Solution
 

@@ -237,4 +237,45 @@ window.initQuizzes = initQuizzes;
 
 document.addEventListener("DOMContentLoaded", () => {
   initQuizzes();
+  initQuizIframeAutoResize();
 });
+
+/* --------------------------
+   Iframe auto-resize: post our height to the parent page
+-------------------------- */
+
+function postQuizIframeHeight() {
+  // Only run when embedded in an iframe
+  if (window.parent === window) return;
+
+  const h = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: "quiz-iframe-height", height: h }, "*");
+}
+
+function initQuizIframeAutoResize() {
+  if (window.parent === window) return; // not in iframe
+
+  let rafId = null;
+  const schedulePost = () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      rafId = null;
+      postQuizIframeHeight();
+    });
+  };
+
+  // Post once on load
+  schedulePost();
+
+  // Post whenever the document size changes (feedback, etc.)
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(schedulePost);
+    ro.observe(document.body);               // better than documentElement
+  }
+
+  // Post when the iframe viewport changes (window resize)
+  window.addEventListener("resize", schedulePost);
+
+  // Fallback: also post after clicks (option select / check / reset)
+  document.addEventListener("click", () => setTimeout(schedulePost, 0));
+}

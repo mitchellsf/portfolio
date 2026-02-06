@@ -208,7 +208,7 @@ window.Quarto = {
 
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The motion of the mass, <span class="math inline">m</span>, as a function of time, <span class="math inline">t</span>, is the objective of the problem. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="A device which dissipates kinetic energy, usually via friction or fluid resistance.">damper</span>. In <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> the damper is the friction on the wall as the mass moves through a pipe.</p>
+<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The objective is find the motion of the mass as a function of time. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="A device which dissipates kinetic energy, usually via friction or fluid resistance." tabindex="0" data-bs-toggle="tooltip">damper</span>, which is represented by wall friction in <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div class="text-center">
 <div id="fig-msd-general-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -221,7 +221,7 @@ Figure&nbsp;1: MSD General Schematic
 </figure>
 </div>
 </div>
-<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: when the mass is at rest <span class="math inline">t&lt;0</span>, the motion’s initial conditions <span class="math inline">t=0</span>, and once motion begins <span class="math inline">t&gt;0</span>.<br> When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">L</span>. It’s convenient to define our coordinate system, <span class="math inline">y</span>, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br> At <span class="math inline">t=0</span>, the mass is displaced by a distance <span class="math inline">y_0</span> with velocity <span class="math inline">v_0</span>. This causes the mass to move for <span class="math inline">t &gt; 0</span>. Once in motion, we can have either an <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="Mass motion is purely due to initial displacement and velocity.">unforced system</span> or a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="Mass motion is due to initial conditons plus external forces.">forced system</span> with the external force <span class="math inline">f(t)</span>.</p>
+<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: when the mass is at rest <span class="math inline">t&lt;0</span>, the motion’s initial conditions <span class="math inline">t=0</span>, and once motion begins <span class="math inline">t&gt;0</span>.<br> When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">L</span>. It’s convenient to define our coordinate system, <span class="math inline">y</span>, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br> At <span class="math inline">t=0</span>, the mass is displaced by a distance <span class="math inline">y_0</span> with velocity <span class="math inline">v_0</span>. This causes the mass to move for <span class="math inline">t &gt; 0</span>. Once in motion, we can have either an <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is purely due to initial displacement and velocity." tabindex="0" data-bs-toggle="tooltip">unforced system</span> or a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is due to initial conditons plus external forces." tabindex="0" data-bs-toggle="tooltip">forced system</span> with the external force <span class="math inline">f(t)</span>.</p>
 <div class="text-center">
 <div id="fig-msd-moving-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -238,7 +238,7 @@ Figure&nbsp;2: MSD Moving Schematic
 <ul>
 <li><p><strong>Door closer</strong> - Opening the door loads a spring in the door closer mechanism, storing energy; when released, the spring drives the door shut while a hydraulic piston forces oil through a small orifice, providing damping that prevents the door from slamming.</p></li>
 <li><p><strong>Bike front suspension</strong> - A bump compresses the fork, increasing pressure in the air chamber (spring) that stores energy and pushes the fork back out, while a hydraulic damper controls oil flow to limit how quickly the fork compresses and rebounds so the bike doesn’t bounce.</p></li>
-<li><p><strong>Building</strong> - A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building’s natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a <span class="quarto-xref tip" data-bs-placement="top" data-bs-toggle="tooltip" tabindex="0" data-bs-title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's.">tuned mass damper (TMD)</span>.</p></li>
+<li><p><strong>Building</strong> - A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building’s natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's." tabindex="0" data-bs-toggle="tooltip">tuned mass damper (TMD)</span>.</p></li>
 <li><p><strong>RLC circuit</strong> - An RLC circuit is the electrical analog of a mass-spring-damper, where inductance acts like mass (inertia), capacitance like a spring (stored energy), and resistance like damping (energy dissipation).</p></li>
 </ul>
 <div class="text-center">
@@ -316,7 +316,7 @@ Table&nbsp;1: MSD real-world examples and their physical analogies
 </div>
 </figure>
 </div>
-<iframe src="q-msd-examples.html" style="width:100%; height:520px; border:0;" loading="lazy">
+<iframe src="q-msd-examples.html" class="quiz-iframe" style="width:100%; border:0;" loading="lazy">
 </iframe>
 </section>
 <section id="governing-equation" class="level2">
@@ -335,10 +335,10 @@ Figure&nbsp;4: MSD Free Body Diagram
 </div>
 </div>
 <p>Next we apply Newton’s second law of motion <span class="math display">
-\begin{align}
-\sum F_y &amp;= m a = m \ddot{y} \nonumber \\
+\begin{aligned}
+\sum F_y &amp;= m a = m \ddot{y} \\
 &amp;= f - k y - c \dot{y}
-\end{align}
+\end{aligned}
 </span></p>
 <p>Rewriting gives the final governing equation <span id="eq-gov-eq"><span class="math display">
 m \ddot{y} + c \dot{y} + k y = f
@@ -347,9 +347,15 @@ m \ddot{y} + c \dot{y} + k y = f
 <p>An ODE is <strong>linear</strong> if the coefficients of each <span class="math inline">y</span> term and its derivatives are only functions of the independent variable. e.g.&nbsp;<span class="math inline">a(t)\dot{y}</span> is linear but <span class="math inline">y\dot{y}</span> is non-linear.</p>
 <p>A <strong>homogeneous</strong> ODE is linear but with no external forcing term. The external force, <span class="math inline">f(t)</span>, in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> makes the equation inhomogeneous. This distinction has important implications in solution strategies.</p>
 <p>An <strong>ordinary</strong> differential equation only has derivatives with respect to one independent variable; as opposed to a <strong>partial</strong> differential equation which has derivatives with respect to two or more independent variables.</p>
+<p>Each of these classifications has a significant influence on solution properties and strategies. Next we’ll discuss the unforced system, <span class="math inline">f(t) = 0</span>.</p>
+<iframe src="q-diff-eq-classification.html" class="quiz-iframe" style="width:100%; border:0;" loading="lazy">
+</iframe>
 </section>
 <section id="the-unforced-system" class="level2">
 <h2 class="anchored" data-anchor-id="the-unforced-system">The Unforced System</h2>
+<p>In the unforced system we set <span class="math inline">f = 0</span> in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> and get <span id="eq-gov-eq-unforced"><span class="math display">
+m \ddot{y} + c \dot{y} + k y = 0
+\tag{2}</span></span></p>
 <section id="analytical-solution" class="level3">
 <h3 class="anchored" data-anchor-id="analytical-solution">Analytical Solution</h3>
 <details class="deep-dive">
@@ -389,6 +395,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
+<script src="../../assets/quiz/iframe-resize.js"></script>
 
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
