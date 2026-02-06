@@ -25,7 +25,7 @@ To gain an understanding of the real-world applications, we'll now consider four
 
 - **Bike front suspension** \- A bump compresses the fork, increasing pressure in the air chamber (spring) that stores energy and pushes the fork back out, while a hydraulic damper controls oil flow to limit how quickly the fork compresses and rebounds so the bike doesn’t bounce.
 
-- **Building** \- A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building's natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a {{< ttip text="tuned mass damper (TMD)" title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's." >}}.
+- **Building** \- A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building's natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a {{< ttip text="tuned mass damper (TMD)" title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's. Because the motion is out of phase a TMD reduces the oscillation amplitude." >}}.
 
 - **RLC circuit** \- An RLC circuit is the electrical analog of a mass-spring-damper, where inductance acts like mass (inertia), capacitance like a spring (stored energy), and resistance like damping (energy dissipation).
 
@@ -72,7 +72,7 @@ The **order** of an ODE is the highest order derivative derivative in the equati
 
 An ODE is **linear** if the coefficients of each $y$ term and its derivatives are only functions of the independent variable. e.g. $a(t)\dot{y}$ is linear but $y\dot{y}$ is non-linear.
 
-A **homogeneous** ODE is linear but with no external forcing term. The external force, $f(t)$, in @eq-gov-eq makes the equation nonhomogeneous. This distinction has important implications in solution strategies.
+A **homogeneous** ODE is linear but with no external forcing term. The external force, $f(t)$, in @eq-gov-eq makes the equation nonhomogeneous. This distinction has important implications in solution strategies. A principle feature of homogeneous ODEs is solutions can be {{< ttip text="superposed" title="Superposition means that we can obtain further solutions from given ones by adding them or multiplying them with constants. e.g. if y1 and y2 are solutions then so is y = c1*y1 + c2*y2 for any constant value of c1 and c2." >}}.
 
 An **ordinary** differential equation only has derivatives with respect to one independent variable; as opposed to a **partial** differential equation which has derivatives with respect to two or more independent variables.
 
@@ -85,22 +85,47 @@ Each of these classifications has a significant influence on solution properties
 
 ## The Unforced System
 
+### Analytical Solution
+
 In the unforced system we set $f = 0$ in @eq-gov-eq and get
 $$
 m \ddot{y} + c \dot{y} + k y = 0
 $$ {#eq-gov-eq-unforced}
 
-### Analytical Solution
+This equation is now homogeneous, allowing us to apply the superposition principle to obtain the general solution.
 
-<details class="deep-dive">
+In general, homogeneous ODEs with constant coeffients admit exponential solutions, i.e. solutions of the form $y(t) = a e^{\lambda t}$ where $\lambda$ is the growth/decay rate and can be {{< ttip text="complex" title="contains real and imaginary parts" >}}. For example, the first-order ODE $\dot{y}+by=0$ yields exponential decay $y = a e^{-bt}$ for $b>0$.
+
+This suggests we should try to solve @eq-gov-eq-unforced assuming $y = a e^{\lambda t}$. Substituting in @eq-gov-eq-unforced yields
+$$
+a m \lambda^2 e^{\lambda t} + a c e^{\lambda t} + a k e^{\lambda t} = (m \lambda^2 + c \lambda + k)a e^{\lambda t} = 0
+$$
+which is reduced to
+$$
+m \lambda^2 + c \lambda + k = 0.
+$$ {#eq-characteristic-eq}
+@eq-characteristic-eq is known as the **characteristic equation**. This can be solved using the quadratic formula
+$$
+\lambda_{1,2} = \frac{1}{2m}\left( -c \pm \sqrt{c^2 - 4 m k} \right)
+$$ {#eq-characteristic-sol}
+where the subcript 1, 2 represents the fact there are two solutions to the characteristic equation corresponding to the '+' or '-' sign.
+
+We've now solved the equation! We assumed $y = a e^{\lambda t}$ and found $\lambda$ must be @eq-characteristic-sol. Using the superposition principle, the general solution is then
+$$
+y = a_1 e^{\lambda_1 t} + a_2 e^{\lambda_2 t}
+$$
+The value of the constants $a_1$ and $a_2$ can be determined by the **initial conditons**, $y(0)=y_0$ and $\dot{y}(0) = v_0$. Since the ODE is second-order, we need two initial conditions.
+
+Note in @eq-characteristic-sol that if $c^2 < 4mk$ then $\lambda$ is complex! This has important implications on the solution behavior and will be discussed next.
+
+
+
+<!-- <details class="deep-dive">
   <summary>Deep Dive: Analytical Solution Derivation</summary>
 
-     The analytical solution is derived by assuming $y(t) = A e^{\lambda t}$.
+</details> -->
 
-</details>
-
-
-### Effect of Damping
+### The Undamped System
 
 ## The Forced System
 

@@ -173,7 +173,6 @@ window.Quarto = {
   <li><a href="#governing-equation" id="toc-governing-equation" class="nav-link" data-scroll-target="#governing-equation">Governing Equation</a></li>
   <li><a href="#the-unforced-system" id="toc-the-unforced-system" class="nav-link" data-scroll-target="#the-unforced-system">The Unforced System</a>
   <ul class="collapse">
-  <li><a href="#analytical-solution" id="toc-analytical-solution" class="nav-link" data-scroll-target="#analytical-solution">Analytical Solution</a></li>
   <li><a href="#effect-of-damping" id="toc-effect-of-damping" class="nav-link" data-scroll-target="#effect-of-damping">Effect of Damping</a></li>
   </ul></li>
   <li><a href="#the-forced-system" id="toc-the-forced-system" class="nav-link" data-scroll-target="#the-forced-system">The Forced System</a>
@@ -208,7 +207,7 @@ window.Quarto = {
 
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The objective is find the motion of the mass as a function of time. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="A device which dissipates kinetic energy, usually via friction or fluid resistance." tabindex="0" data-bs-toggle="tooltip">damper</span>, which is represented by wall friction in <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>The mass-spring-damper (MSD) system is a simplified mathematical model of many real-world systems. <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a> shows the basic system considered. The objective is find the motion of the mass as a function of time. The mass is connected to the wall via a spring which provides a restoring force when stretched and a resisting force when compressed. This motion is opposed by a <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="A device which dissipates kinetic energy, usually via friction or fluid resistance." tabindex="0" data-bs-placement="top">damper</span>, which is represented by wall friction in <a href="#fig-msd-general-schematic" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div class="text-center">
 <div id="fig-msd-general-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -221,7 +220,7 @@ Figure&nbsp;1: MSD General Schematic
 </figure>
 </div>
 </div>
-<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: when the mass is at rest <span class="math inline">t&lt;0</span>, the motion’s initial conditions <span class="math inline">t=0</span>, and once motion begins <span class="math inline">t&gt;0</span>.<br> When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">L</span>. It’s convenient to define our coordinate system, <span class="math inline">y</span>, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br> At <span class="math inline">t=0</span>, the mass is displaced by a distance <span class="math inline">y_0</span> with velocity <span class="math inline">v_0</span>. This causes the mass to move for <span class="math inline">t &gt; 0</span>. Once in motion, we can have either an <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is purely due to initial displacement and velocity." tabindex="0" data-bs-toggle="tooltip">unforced system</span> or a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="Mass motion is due to initial conditons plus external forces." tabindex="0" data-bs-toggle="tooltip">forced system</span> with the external force <span class="math inline">f(t)</span>.</p>
+<p><a href="#fig-msd-moving-schematic" class="quarto-xref">Figure&nbsp;2</a> shows the MSD system at three different states: when the mass is at rest <span class="math inline">t&lt;0</span>, the motion’s initial conditions <span class="math inline">t=0</span>, and once motion begins <span class="math inline">t&gt;0</span>.<br> When the mass is at rest (in an equilibrium state), the spring is stretched by length <span class="math inline">L</span>. It’s convenient to define our coordinate system, <span class="math inline">y</span>, based on position of the mass at its rest state so that displacement represents the distance from equilibrium.<br> At <span class="math inline">t=0</span>, the mass is displaced by a distance <span class="math inline">y_0</span> with velocity <span class="math inline">v_0</span>. This causes the mass to move for <span class="math inline">t &gt; 0</span>. Once in motion, we can have either an <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="Mass motion is purely due to initial displacement and velocity." tabindex="0" data-bs-placement="top">unforced system</span> or a <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="Mass motion is due to initial conditons plus external forces." tabindex="0" data-bs-placement="top">forced system</span> with the external force <span class="math inline">f(t)</span>.</p>
 <div class="text-center">
 <div id="fig-msd-moving-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -238,7 +237,7 @@ Figure&nbsp;2: MSD Moving Schematic
 <ul>
 <li><p><strong>Door closer</strong> - Opening the door loads a spring in the door closer mechanism, storing energy; when released, the spring drives the door shut while a hydraulic piston forces oil through a small orifice, providing damping that prevents the door from slamming.</p></li>
 <li><p><strong>Bike front suspension</strong> - A bump compresses the fork, increasing pressure in the air chamber (spring) that stores energy and pushes the fork back out, while a hydraulic damper controls oil flow to limit how quickly the fork compresses and rebounds so the bike doesn’t bounce.</p></li>
-<li><p><strong>Building</strong> - A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building’s natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a <span class="quarto-xref tip" data-bs-placement="top" data-bs-title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's." tabindex="0" data-bs-toggle="tooltip">tuned mass damper (TMD)</span>.</p></li>
+<li><p><strong>Building</strong> - A building sways like a mass-spring-damper in wind or earthquakes, with the structure’s mass moving against the stiffness of columns/walls (spring) and energy lost through material/structural damping (damper). In extreme cases the wind forcing frequency can achieve resonance with the building’s natural frequency, which can have catastrophic consequences. Some very tall buildings counter this with a <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="A type of MSD system which has the same natural frequency as the building but whose motion is out of phase with the building's. Because the motion is out of phase a TMD reduces the oscillation amplitude." tabindex="0" data-bs-placement="top">tuned mass damper (TMD)</span>.</p></li>
 <li><p><strong>RLC circuit</strong> - An RLC circuit is the electrical analog of a mass-spring-damper, where inductance acts like mass (inertia), capacitance like a spring (stored energy), and resistance like damping (energy dissipation).</p></li>
 </ul>
 <div class="text-center">
@@ -342,10 +341,10 @@ Figure&nbsp;4: MSD Free Body Diagram
 </span></p>
 <p>Rewriting gives the final governing equation <span id="eq-gov-eq"><span class="math display">
 m \ddot{y} + c \dot{y} + k y = f
-\tag{1}</span></span> This equation is a second order, linear, inhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let’s define each of these terms.</p>
+\tag{1}</span></span> This equation is a second order, linear, nonhomogeneous, ordinary differential equation (ODE) with constant coefficients. Let’s define each of these terms.</p>
 <p>The <strong>order</strong> of an ODE is the highest order derivative derivative in the equation. In this case <span class="math inline">\ddot{y}</span> is the highest order derivative so we say the ODE is second order.</p>
 <p>An ODE is <strong>linear</strong> if the coefficients of each <span class="math inline">y</span> term and its derivatives are only functions of the independent variable. e.g.&nbsp;<span class="math inline">a(t)\dot{y}</span> is linear but <span class="math inline">y\dot{y}</span> is non-linear.</p>
-<p>A <strong>homogeneous</strong> ODE is linear but with no external forcing term. The external force, <span class="math inline">f(t)</span>, in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> makes the equation inhomogeneous. This distinction has important implications in solution strategies.</p>
+<p>A <strong>homogeneous</strong> ODE is linear but with no external forcing term. The external force, <span class="math inline">f(t)</span>, in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> makes the equation nonhomogeneous. This distinction has important implications in solution strategies. A principle feature of homogeneous ODEs is solutions can be <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="Superposition means that we can obtain further solutions from given ones by adding them or multiplying them with constants. e.g. if y1 and y2 are solutions then so is y = c1*y1 + c2*y2 for any constant value of c1 and c2." tabindex="0" data-bs-placement="top">superposed</span>.</p>
 <p>An <strong>ordinary</strong> differential equation only has derivatives with respect to one independent variable; as opposed to a <strong>partial</strong> differential equation which has derivatives with respect to two or more independent variables.</p>
 <p>Each of these classifications has a significant influence on solution properties and strategies. Next we’ll discuss the unforced system, <span class="math inline">f(t) = 0</span>.</p>
 <iframe src="q-diff-eq-classification.html" class="quiz-iframe" style="width:100%; border:0;" loading="lazy">
@@ -356,15 +355,22 @@ m \ddot{y} + c \dot{y} + k y = f
 <p>In the unforced system we set <span class="math inline">f = 0</span> in <a href="#eq-gov-eq" class="quarto-xref">Equation&nbsp;1</a> and get <span id="eq-gov-eq-unforced"><span class="math display">
 m \ddot{y} + c \dot{y} + k y = 0
 \tag{2}</span></span></p>
-<section id="analytical-solution" class="level3">
-<h3 class="anchored" data-anchor-id="analytical-solution">Analytical Solution</h3>
-<details class="deep-dive">
-<summary>
-Deep Dive: Analytical Solution Derivation
-</summary>
-<p>The analytical solution is derived by assuming <span class="math inline">y(t) = A e^{\lambda t}</span>.</p>
-</details>
-</section>
+<p>This equation is now homogeneous, allowing us to apply the superposition principle to obtain the general solution.</p>
+<p>In general, homogeneous ODEs with constant coeffients admit exponential solutions, i.e.&nbsp;solutions of the form <span class="math inline">y(t) = a e^{\lambda t}</span> where <span class="math inline">\lambda</span> is the growth/decay rate and can be <span class="quarto-xref tip" data-bs-toggle="tooltip" data-bs-title="contains real and imaginary parts" tabindex="0" data-bs-placement="top">complex</span>. For example, the first-order ODE <span class="math inline">\dot{y}+by=0</span> yields exponential decay <span class="math inline">y = a e^{-bt}</span> for <span class="math inline">b&gt;0</span>.</p>
+<p>This suggests we should try to solve <a href="#eq-gov-eq-unforced" class="quarto-xref">Equation&nbsp;2</a> assuming <span class="math inline">y = a e^{\lambda t}</span>. Substituting in <a href="#eq-gov-eq-unforced" class="quarto-xref">Equation&nbsp;2</a> yields <span class="math display">
+a m \lambda^2 e^{\lambda t} + a c e^{\lambda t} + a k e^{\lambda t} = (m \lambda^2 + c \lambda + k)a e^{\lambda t} = 0
+</span> which is reduced to <span id="eq-characteristic-eq"><span class="math display">
+m \lambda^2 + c \lambda + k = 0.
+\tag{3}</span></span> <a href="#eq-characteristic-eq" class="quarto-xref">Equation&nbsp;3</a> is known as the <strong>characteristic equation</strong>. This can be solved using the quadratic formula <span id="eq-characteristic-sol"><span class="math display">
+\lambda_{1,2} = \frac{1}{2m}\left( -c \pm \sqrt{c^2 - 4 m k} \right)
+\tag{4}</span></span> where the subcript 1, 2 represents the fact there are two solutions to the characteristic equation corresponding to the ‘+’ or ‘-’ sign.</p>
+<p>We’ve now solved the equation! We assumed <span class="math inline">y = a e^{\lambda t}</span> and found <span class="math inline">\lambda</span> must be <a href="#eq-characteristic-sol" class="quarto-xref">Equation&nbsp;4</a>. Using the superposition principle, the general solution is then <span class="math display">
+y = a_1 e^{\lambda_1 t} + a_2 e^{\lambda_2 t}
+</span> The value of the constants <span class="math inline">a_1</span> and <span class="math inline">a_2</span> can be determined by the <strong>initial conditons</strong>, <span class="math inline">y(0)=y_0</span> and <span class="math inline">\dot{y}(0) = v_0</span>. Since the ODE is second-order, we need two initial conditions.</p>
+<!-- <details class="deep-dive">
+  <summary>Deep Dive: Analytical Solution Derivation</summary>
+
+</details> -->
 <section id="effect-of-damping" class="level3">
 <h3 class="anchored" data-anchor-id="effect-of-damping">Effect of Damping</h3>
 </section>
